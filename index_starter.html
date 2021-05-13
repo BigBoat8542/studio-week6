@@ -107,8 +107,8 @@
     	// Add Tile Layer
 		L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
 			attribution: 'Tiles by <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> | Data by <a href="url here">Who???</a>',
-			maxZoom: 17,
-			minZoom: 9
+			maxZoom: 20,
+			minZoom: 1,
 		}).addTo(map);
 
 		// Add GeoJSON Data
@@ -170,18 +170,15 @@
 		});
 
 		// Create specific icons for amenity types
-		var clinicIcon = new healthIcon({iconUrl: 'icons/clinic.png'});
+		var clinicIcon = new healthIcon({iconUrl: 'icons/clinic.jpeg'});
 		var dentistIcon = new healthIcon({iconUrl: 'icons/dentist.png'});
 		var doctorsIcon = new healthIcon({iconUrl: 'icons/doctor.png'});
-		var hospitalIcon = new healthIcon({iconUrl: 'icons/health_facility.png'});
+		var hospitalIcon = new healthIcon({iconUrl: 'icons/health.png'});
 		var pharmacyIcon = new healthIcon({iconUrl: 'icons/medicine.png'});
 		
 		// Add Admin unit Polygons
 		// Null variable that will hold admin units layer
 		var adminLayer = null;
-
-		
-		
 		
 		// Add Admin Polygons
 		$.getJSON("data/Mali_Prevalence_Global_Acute_Malnutrition.geojson",function(data){
