@@ -138,25 +138,6 @@
    		 }).addTo(map);
 		});
 		
-		// Set function for color ramp w/ colors from Colorbrewer
-		function setColor(Wast_Text){
-		return Wast_Text == 'High' ? '#e6550d' :
-		  Wast_Text == 'Medium' ? '#fdae6b' :
-		  Wast_Text == 'Low' ? '#fee6ce' :
-                   '#d4cfcd';
-		};	
-		
-		// Set style function that sets fill color property equal to FI_Class
-		function style(feature) {
-		  return {
-		    fillColor: setColor(feature.properties.Wast_Text),
-		    fillOpacity: 0.7,
- 		   weight: 0,
- 		   opacity: 0,
- 		   color: '#ffffff',
- 		   dashArray: '0'
-		 };
-		}
 		
 		// Create Custom Icons Here
 		// Start by creating a standard Health Icon
@@ -184,6 +165,26 @@
 		$.getJSON("data/Mali_Prevalence_Global_Acute_Malnutrition.geojson",function(data){
   		  adminLayer = L.geoJson(data).addTo(map);
 		});
+		
+		// Set function for color ramp w/ colors from Colorbrewer
+		function setColor(Wast_Text){
+		return Wast_Text == 'High' ? '#e6550d' :
+		  Wast_Text == 'Medium' ? '#fdae6b' :
+		  Wast_Text == 'Low' ? '#fee6ce' :
+                   '#d4cfcd';
+		};	
+		
+		// Set style function that sets fill color property equal to FI_Class
+		function style(feature) {
+		  return {
+		    fillColor: setColor(feature.properties.Wast_Text),
+		    fillOpacity: 0.7,
+ 		   weight: 0,
+ 		   opacity: 0,
+ 		   color: '#ffffff',
+ 		   dashArray: '0'
+		 };
+		}
 		
 		// Create Leaflet Control Object for Legend
 		var legend = L.control({
