@@ -91,7 +91,12 @@
 		}).addTo(map);
 		});
 		// Create Custom Icons Here
-
+		var healthIcon = L.icon({
+		  iconUrl: 'icons/health_facility.png',
+		  iconSize: [24,24],
+		  iconAnchor: [12,12],
+		  popupAnchor: [0,-6]
+			});
 		// Add Admin unit Polygons
 
 		// Create Leaflet Control Object for Legend
