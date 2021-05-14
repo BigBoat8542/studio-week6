@@ -165,9 +165,8 @@
 		
 		// Add Admin Polygons
 		$.getJSON("data/Mali_Prevalence_Global_Acute_Malnutrition.geojson",function(data){
-  		  adminLayer = L.geoJson(data).addTo(map);
+  		  adminLayer = L.geoJson(data, {style: style}).addTo(map); // we added {style: style} here.
 		});
-		
 		// Set function for color ramp w/ colors from Colorbrewer
 		function setColor(Wast_Text){
 		return Wast_Text == 'High' ? '#e6550d' :
